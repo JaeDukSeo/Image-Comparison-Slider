@@ -1,8 +1,10 @@
+@import '../partials/variables'; // colors, fonts etc...
+@import '../partials/mixins'; // custom mixins
 
 .cd-image-container {
   position: relative;
   width: 90%;
-  max-width: $M; // breakpoints inside partials > _layout.scss
+  max-width: $cd-image-container-max-width; // breakpoints inside partials > _layout.scss
   margin: 0em auto;
 
   img {

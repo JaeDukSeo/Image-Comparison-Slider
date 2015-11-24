@@ -1,35 +1,3 @@
-/* -------------------------------- 
-
-Primary style
-
--------------------------------- */
-body {
-  font-size: 100%;
-  font-family: "Open Sans", sans-serif;
-  color: #445b7c;
-  background-color: #445b7c; }
-
-a {
-  color: #dc717d;
-  text-decoration: none; }
-
-/* -------------------------------- 
-
-Main components 
-
--------------------------------- */
-header {
-  position: relative;
-  height: 160px;
-  line-height: 160px;
-  text-align: center; }
-  header h1 {
-    font-size: 22px;
-    color: #ffffff;
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
-
 .cd-image-container {
   position: relative;
   width: 90%;
@@ -135,4 +103,4 @@ header {
     -moz-transition: -moz-transform 0.3s 0.7s, opacity 0s 0.7s;
     transition: transform 0.3s 0.7s, opacity 0s 0.7s; }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=image-comparison-slider.css.map */

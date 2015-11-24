@@ -4,7 +4,6 @@
 Primary style
 
 -------------------------------- */
-
 body {
   font: {
     size: 100%;
@@ -32,18 +31,9 @@ header {
   text-align: center;
 
   h1 {
-    @include font-size(22px);
+    font-size: 22px;
     color: $color-3;
     font-weight: 300;
     @include font-smoothing;
-  }
-
-  @include MQ(M) {
-    height: 240px;
-    line-height: 240px;
-
-    h1 {
-      @include font-size(32px);
-    }
   }
 }

@@ -1,11 +1,16 @@
-@import '../partials/variables'; // colors, fonts etc...
-@import '../partials/mixins'; // custom mixins
+@import 'image-comparison-slider__settings';
+@import 'image-comparison-slider__mixins';
 
 .cd-image-container {
   position: relative;
   width: 90%;
-  max-width: $cd-image-container-max-width; // breakpoints inside partials > _layout.scss
+  max-width: $image-comparison-slider__image-container-max-width;
   margin: 0em auto;
+
+  font: {
+    family: $image-comparison-slider__image-label-font-family;
+    size: $image-comparison-slider__image-label-font-size;
+  }
 
   img {
     display: block;
@@ -17,14 +22,14 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  color: $image-label-color;
+  color: $image-comparison-slider__image-label-color;
   padding: 1em;
   @include font-smoothing;
   opacity: 0;
   @include transform(translateY(20px));
-  -webkit-transition: -webkit-transform .3s $bounce-in-duration, opacity .3s $bounce-in-duration;
-  -moz-transition: -moz-transform .3s $bounce-in-duration, opacity .3s $bounce-in-duration;
-  transition: transform .3s $bounce-in-duration, opacity .3s $bounce-in-duration;
+  -webkit-transition: -webkit-transform .3s $image-comparison-slider__bounce-in-duration, opacity .3s $image-comparison-slider__bounce-in-duration;
+  -moz-transition: -moz-transform .3s $image-comparison-slider__bounce-in-duration, opacity .3s $image-comparison-slider__bounce-in-duration;
+  transition: transform .3s $image-comparison-slider__bounce-in-duration, opacity .3s $image-comparison-slider__bounce-in-duration;
 
   &.is-hidden {
     visibility: hidden;
@@ -66,7 +71,7 @@
   .is-visible & {
     width: 50%;
     /* bounce in animation of the modified image */
-    @include animation(cd-bounce-in $bounce-in-duration);
+    @include animation(cd-bounce-in $image-comparison-slider__bounce-in-duration);
   }
 }
 
@@ -94,7 +99,7 @@
   margin-left: -22px;
   margin-top: -22px;
   border-radius: 50%;
-  background: $drag-button-color url('../img/cd-arrows.svg') no-repeat center center;
+  background: $image-comparison-slider__drag-button-color url('../img/cd-arrows.svg') no-repeat center center;
   cursor: move;
   box-shadow: 0 0 0 6px rgba(#000, .2), 0 0 10px rgba(#000, .6), inset 0 1px 0 rgba(#fff, .3);
   opacity: 0;
@@ -102,14 +107,14 @@
 
   &.cd-draggable {
     /* change background color when element is active */
-    background-color: $drag-button-active-color;
+    background-color: $image-comparison-slider__drag-button-active-color;
   }
 
   .is-visible & {
     opacity: 1;
     @include transform(translate3d(0,0,0) scale(1));
-    -webkit-transition: -webkit-transform .3s $bounce-in-duration, opacity 0s $bounce-in-duration;
-    -moz-transition: -moz-transform .3s $bounce-in-duration, opacity 0s $bounce-in-duration;
-    transition: transform .3s $bounce-in-duration, opacity 0s $bounce-in-duration;
+    -webkit-transition: -webkit-transform .3s $image-comparison-slider__bounce-in-duration, opacity 0s $image-comparison-slider__bounce-in-duration;
+    -moz-transition: -moz-transform .3s $image-comparison-slider__bounce-in-duration, opacity 0s $image-comparison-slider__bounce-in-duration;
+    transition: transform .3s $image-comparison-slider__bounce-in-duration, opacity 0s $image-comparison-slider__bounce-in-duration;
   }
 }

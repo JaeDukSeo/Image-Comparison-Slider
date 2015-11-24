@@ -1,8 +1,5 @@
-// @import 'bourbon'; // http://bourbon.io/
-
-@import '../partials/variables'; // colors, fonts etc...
-@import '../partials/mixins'; // custom mixins
-
+@import 'image-comparison-slider__settings';
+@import 'image-comparison-slider__mixins';
+@import 'image-comparison-slider';
 
 @import 'presentational';
-@import 'image-comparison-slider';

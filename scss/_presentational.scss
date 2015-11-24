@@ -7,9 +7,8 @@ Primary style
 body {
   font: {
     size: 100%;
-    family: $primary-font; // variables inside partials > _variables.scss
   }
-  background-color: $drag-button-active-color;
+  background-color: $image-comparison-slider__drag-button-active-color;
 }
 
 

@@ -1,35 +1,10 @@
-/* -------------------------------- 
-
-Primary style
-
--------------------------------- */
-body {
-  font-size: 100%;
-  font-family: "Open Sans", sans-serif;
-  background-color: #445b7c; }
-
-/* -------------------------------- 
-
-Main components 
-
--------------------------------- */
-header {
-  position: relative;
-  height: 160px;
-  line-height: 160px;
-  text-align: center; }
-  header h1 {
-    font-size: 22px;
-    color: white;
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
-
 .cd-image-container {
   position: relative;
   width: 90%;
   max-width: 768px;
-  margin: 0em auto; }
+  margin: 0em auto;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px; }
   .cd-image-container img {
     display: block;
     max-width: 100%; }
@@ -129,5 +104,31 @@ header {
     -webkit-transition: -webkit-transform 0.3s 0.7s, opacity 0s 0.7s;
     -moz-transition: -moz-transform 0.3s 0.7s, opacity 0s 0.7s;
     transition: transform 0.3s 0.7s, opacity 0s 0.7s; }
+
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+body {
+  font-size: 100%;
+  background-color: #445b7c; }
+
+/* -------------------------------- 
+
+Main components 
+
+-------------------------------- */
+header {
+  position: relative;
+  height: 160px;
+  line-height: 160px;
+  text-align: center; }
+  header h1 {
+    font-size: 22px;
+    color: white;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
 
 /*# sourceMappingURL=style.css.map */

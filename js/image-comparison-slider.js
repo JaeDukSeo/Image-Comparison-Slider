@@ -32,10 +32,16 @@ function checkPosition(container) {
 }
 
 //draggable funtionality - credits to http://css-tricks.com/snippets/jquery/draggable-without-jquery-ui/
+// replaced with improved version from
+// https://gist.github.com/NazarkinRoman/4086b39dc6d02d25f459
+
+// improved drags function, replace it in your code
 function drags(dragElement, resizeElement, container, labelContainer, labelResizeElement) {
-    dragElement.on("mousedown vmousedown", function(e) {
-        dragElement.addClass('draggable');
-        resizeElement.addClass('resizable');
+    var $ = jQuery;
+
+    dragElement.on('mousedown vmousedown', function (e) {
+        dragElement.addClass('cd-draggable');
+        resizeElement.addClass('cd-resizable');
 
         var dragWidth = dragElement.outerWidth(),
             xPosition = dragElement.offset().left + dragWidth - e.pageX,
@@ -43,37 +49,41 @@ function drags(dragElement, resizeElement, container, labelContainer, labelResiz
             containerWidth = container.outerWidth(),
             minLeft = containerOffset + 10,
             maxLeft = containerOffset + containerWidth - dragWidth - 10;
-        
-        dragElement.parents().on("mousemove vmousemove", function(e) {
-            leftValue = e.pageX + xPosition - dragWidth;
-            
-            //constrain the draggable element to move inside his container
-            if(leftValue < minLeft ) {
+
+        dragElement.parent().bind('mousemove.cd vmousemove.cd', function (e) {
+            var leftValue = e.pageX + xPosition - dragWidth;
+
+            // constrain the draggable element to move inside his container
+            if (leftValue < minLeft) {
                 leftValue = minLeft;
-            } else if ( leftValue > maxLeft) {
+            } else if (leftValue > maxLeft) {
                 leftValue = maxLeft;
             }
 
-            widthValue = (leftValue + dragWidth/2 - containerOffset)*100/containerWidth+'%';
-            
-            $('.draggable').css('left', widthValue).on("mouseup vmouseup", function() {
-                $(this).removeClass('draggable');
-                resizeElement.removeClass('resizable');
+            var widthValue = (leftValue + dragWidth / 2 - containerOffset) * 100 / containerWidth + '%';
+
+            $('.cd-draggable', container).css('left', widthValue).one('mouseup vmouseup', function () {
+                $(this).removeClass('cd-draggable');
+                resizeElement.removeClass('cd-resizable');
             });
 
-            $('.resizable').css('width', widthValue); 
+            $('.cd-resizable', container).css('width', widthValue);
 
             updateLabel(labelResizeElement, resizeElement, 'left');
             updateLabel(labelContainer, resizeElement, 'right');
-            
-        }).on("mouseup vmouseup", function(e){
-            dragElement.removeClass('draggable');
-            resizeElement.removeClass('resizable');
+
+        }).one('mouseup vmouseup', function (e) {
+            dragElement.removeClass('cd-draggable');
+            resizeElement.removeClass('cd-resizable');
+
+            dragElement.parent().unbind('mousemove.cd vmousemove.cd');
         });
+
         e.preventDefault();
-    }).on("mouseup vmouseup", function(e) {
-        dragElement.removeClass('draggable');
-        resizeElement.removeClass('resizable');
+
+    }).on('mouseup vmouseup', function (e) {
+        dragElement.removeClass('cd-draggable');
+        resizeElement.removeClass('cd-resizable');
     });
 }
 

@@ -17,7 +17,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  color: $color-3;
+  color: $image-label-color;
   padding: 1em;
   @include font-smoothing;
   opacity: 0;
@@ -94,15 +94,15 @@
   margin-left: -22px;
   margin-top: -22px;
   border-radius: 50%;
-  background: $color-2 url('../img/cd-arrows.svg') no-repeat center center;
+  background: $drag-button-color url('../img/cd-arrows.svg') no-repeat center center;
   cursor: move;
   box-shadow: 0 0 0 6px rgba(#000, .2), 0 0 10px rgba(#000, .6), inset 0 1px 0 rgba(#fff, .3);
   opacity: 0;
   @include transform(translate3d(0,0,0) scale(0));
 
-  &.draggable {
+  &.cd-draggable {
     /* change background color when element is active */
-    background-color: $color-1;
+    background-color: $drag-button-active-color;
   }
 
   .is-visible & {

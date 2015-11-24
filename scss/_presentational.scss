@@ -9,14 +9,9 @@ body {
     size: 100%;
     family: $primary-font; // variables inside partials > _variables.scss
   }
-  color: $color-1;
-  background-color: $color-1;
+  background-color: $drag-button-active-color;
 }
 
-a {
-  color: $color-2;
-  text-decoration: none;
-}
 
 /* -------------------------------- 
 
@@ -32,7 +27,7 @@ header {
 
   h1 {
     font-size: 22px;
-    color: $color-3;
+    color: white;
     font-weight: 300;
     @include font-smoothing;
   }

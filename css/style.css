@@ -16,9 +16,6 @@ a {
   color: #dc717d;
   text-decoration: none; }
 
-img {
-  max-width: 100%; }
-
 /* -------------------------------- 
 
 Main components 
@@ -50,7 +47,8 @@ header {
   max-width: 768px;
   margin: 0em auto; }
   .cd-image-container img {
-    display: block; }
+    display: block;
+    max-width: 100%; }
 
 .cd-image-label {
   position: absolute;
